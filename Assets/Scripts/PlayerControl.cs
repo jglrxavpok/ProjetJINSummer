@@ -1,8 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class PlayerControl : MonoBehaviour
-{
+public class PlayerControl : MonoBehaviour {
     public float gravity = -9.81f;
     public BoxCollider2D boxCollider;
     public float AXIS_DEADZONE = 0.1f;
@@ -10,38 +9,34 @@ public class PlayerControl : MonoBehaviour
     public float jumpHeight = 10f;
     public Rigidbody2D rigidbody;
     private bool onGround = false;
-    public Vector2 velocity = new Vector2();
+    private Vector2 velocity = new Vector2();
     private int levelCollisionMaskLayer;
     public float collisionEpsilon = 0.0001f;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        levelCollisionMaskLayer = LayerMask.NameToLayer("LevelCollision");   
+    void Start() {
+        levelCollisionMaskLayer = LayerMask.NameToLayer("LevelCollision");
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         float dt = Time.deltaTime;
         float mass = rigidbody.mass;
 
-        if (onGround && Input.GetButton("Jump"))
-        {
+        if (onGround && Input.GetButton("Jump")) {
             float jumpForce = Mathf.Sqrt(2 * -gravity * jumpHeight);
             velocity.y = jumpForce;
         }
 
         float horizontal = Input.GetAxis("Horizontal");
         float strafe = 0f;
-        if (Math.Abs(horizontal) > AXIS_DEADZONE)
-        {
+        if (Math.Abs(horizontal) > AXIS_DEADZONE) {
             strafe = horizontal;
         }
 
         velocity.x = horizontalSpeed * strafe;
-        velocity.y += gravity*dt;
-        
+        velocity.y += gravity * dt;
+
         // step physics
         var previousPosition = transform.position;
         Vector2 position = new Vector2(previousPosition.x, previousPosition.y);
@@ -53,31 +48,28 @@ public class PlayerControl : MonoBehaviour
         rigidbody.MovePosition(position);
     }
 
-    private float step(Vector2 startPosition, ref float velocity, float dt, Vector2 castDirection)
-    {
+    private float step(Vector2 startPosition, ref float velocity, float dt, Vector2 castDirection) {
         float displacement = velocity * dt;
         float possibleMovement = stepAxis(startPosition, displacement, castDirection);
-        if ((Math.Abs(displacement) - possibleMovement) > 0)
-        {
+        if ((Math.Abs(displacement) - possibleMovement) > 0) {
             // TODO: handle onGround
-            velocity = possibleMovement/dt*Math.Sign(displacement);
-            return possibleMovement*Math.Sign(displacement);
+            velocity = possibleMovement / dt * Math.Sign(displacement);
+            return possibleMovement * Math.Sign(displacement);
         }
+
         return displacement;
     }
-    
-    private float stepAxis(Vector2 startPosition, float displacement, Vector2 castDirection)
-    {
+
+    private float stepAxis(Vector2 startPosition, float displacement, Vector2 castDirection) {
         float closestDist = Math.Abs(displacement);
         // TODO: Use NonAlloc variant
         ContactFilter2D noFilter = new ContactFilter2D().NoFilter();
-        foreach(var hit in Physics2D.BoxCastAll(startPosition+castDirection * (Math.Sign(displacement) * collisionEpsilon), boxCollider.size*transform.lossyScale, 0.0f, castDirection,
-            displacement, noFilter.layerMask))
-        {
-            if (hit.collider && hit.collider.gameObject && hit.collider.gameObject != this.gameObject)
-            {
-                if (hit.distance < closestDist)
-                {
+        foreach (var hit in Physics2D.BoxCastAll(
+            startPosition + castDirection * (Math.Sign(displacement) * collisionEpsilon),
+            boxCollider.size * transform.lossyScale, 0.0f, castDirection,
+            displacement, noFilter.layerMask)) {
+            if (hit.collider && hit.collider.gameObject && hit.collider.gameObject != this.gameObject) {
+                if (hit.distance < closestDist) {
                     closestDist = hit.distance;
                 }
             }
@@ -85,19 +77,15 @@ public class PlayerControl : MonoBehaviour
 
         return closestDist;
     }
-    
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("LevelCollision"))
-        {
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("LevelCollision")) {
             onGround = true;
         }
     }
-    
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("LevelCollision"))
-        {
+
+    private void OnTriggerExit2D(Collider2D other) {
+        if (other.CompareTag("LevelCollision")) {
             onGround = false;
         }
     }
