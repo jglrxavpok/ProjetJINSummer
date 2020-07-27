@@ -1124,11 +1124,7 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 238730248}
     m_ColliderPaths:
-    - - X: -80000000
-        Y: 0
-      - X: -110000000
-        Y: 0
-      - X: -110000000
+    - - X: -110000000
         Y: -50000000
       - X: 110000000
         Y: -50000000
@@ -1146,20 +1142,16 @@ CompositeCollider2D:
         Y: -5625000
       - X: 25000000
         Y: 0
-      - X: 16250000
+      - X: 20000000
         Y: 0
-      - X: 10000000
-        Y: -6250000
-      - X: 10000000
-        Y: -10000000
-      - X: 6250000
-        Y: -10000000
-      - X: 0
-        Y: -16250000
       - X: 0
         Y: -20000000
       - X: -80000000
         Y: -20000000
+      - X: -80000000
+        Y: 0
+      - X: -110000000
+        Y: 0
   m_CompositePaths:
     m_Paths:
     - - {x: 10.99997, y: -5}
@@ -1170,12 +1162,8 @@ CompositeCollider2D:
       - {x: 3, y: -0.9999706}
       - {x: 2.9999936, y: -0.5624925}
       - {x: 2.4999883, y: 0}
-      - {x: 1.6249924, y: -0.0000076}
-      - {x: 1, y: -0.6250108}
-      - {x: 0.9999706, y: -1}
-      - {x: 0.62499243, y: -1.0000076}
-      - {x: 0, y: -1.6250108}
-      - {x: -0.0000294, y: -2}
+      - {x: 1.9999924, y: -0.0000076}
+      - {x: -0.0000108, y: -2}
       - {x: -8, y: -1.9999707}
       - {x: -8.00003, y: 0}
       - {x: -11, y: -0.000029300001}
@@ -1442,6 +1430,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6448956328223120517, guid: b2cf548997f44a0489ea71b5e06c90d3,
+        type: 3}
+      propertyPath: m_Tiles.Array.data[96].second.m_AllTileFlags
+      value: 1073741825
+      objectReference: {fileID: 0}
     - target: {fileID: 7853866808329013969, guid: b2cf548997f44a0489ea71b5e06c90d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1640,6 +1633,7 @@ GameObject:
   - component: {fileID: 2067844649}
   - component: {fileID: 2067844645}
   - component: {fileID: 2067844643}
+  - component: {fileID: 2067844650}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1775,11 +1769,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: -100
   boxCollider: {fileID: 2067844645}
+  rigidbody: {fileID: 2067844647}
+  levelCollisionMaskLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  collisionEpsilon: 0.01
+  maxSlopeAngle: 50
   AXIS_DEADZONE: 0.1
   horizontalSpeed: 10
   jumpHeight: 5
-  rigidbody: {fileID: 2067844647}
-  collisionEpsilon: 0.01
 --- !u!61 &2067844649
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1806,3 +1804,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.196536, y: 0.022164583}
   m_EdgeRadius: 0
+--- !u!114 &2067844650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067844642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f8ebcd5c414fe3842eef7286b9ebd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aim: {fileID: 2067844643}
+  bullet: {fileID: 2427278617691278189, guid: 8d03d2cb9d07cc84cb890e9fca0a5f23, type: 3}
+  speed: 10
