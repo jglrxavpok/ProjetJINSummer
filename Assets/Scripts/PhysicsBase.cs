@@ -11,21 +11,25 @@ public class PhysicsBase : MonoBehaviour {
     public float collisionEpsilon = 0.0001f;
     public float maxSlopeAngle = 50;
     public float stepEpsilon = 0.01f;
+    private Vector2 position;
+
+    private void Start() {
+        position = transform.position;
+    }
 
     // Update is called once per frame
-    protected void Update() {
+    protected virtual void Update() {
         float dt = Time.deltaTime;
         velocity.y += gravity * dt;
 
         // step physics
-        var previousPosition = transform.position;
-        Vector2 position = new Vector2(previousPosition.x, previousPosition.y);
-
         // step X axis then Y axis
         StepSlopes(ref position, ref velocity, dt);
         position.x += step(position, ref velocity.x, dt, Vector2.right);
         position.y += step(position, ref velocity.y, dt, Vector2.up);
+    }
 
+    private void FixedUpdate() {
         rigidbody.MovePosition(position);
     }
 
@@ -96,5 +100,9 @@ public class PhysicsBase : MonoBehaviour {
     public void SetVelocity(float speedX, float speedY) {
         velocity.x = speedX;
         velocity.y = speedY;
+    }
+
+    public ref Vector2 GetVelocityRef() {
+        return ref velocity;
     }
 }
