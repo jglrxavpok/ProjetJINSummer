@@ -10,17 +10,27 @@ namespace JINSummer {
         // TODO: Pooled
         public GameObject bullet;
         public float speed = 10.0f;
+        private float cooldown = 0.0f;
+        public float shootCooldown = 0.2f;
 
         public void Update() {
-            if (Input.GetButton("Shoot")) {
+            if (cooldown > 0) {
+                cooldown -= Time.deltaTime;                
+            }
+            if (Input.GetButton("Shoot") && CanShoot()) {
                 AimDirection direction = aim.GetDirection();
                 float angle = direction.Angle();
                 float cosangle = Mathf.Cos(angle);
                 float sinangle = Mathf.Sin(angle);
                 SpawnBullet(angle, cosangle*speed, sinangle*speed);
+                cooldown = shootCooldown;
 
                 // TODO: cooldown
             }
+        }
+
+        private bool CanShoot() {
+            return cooldown <= 0f;
         }
 
         private void SpawnBullet(float angle, float speedX, float speedY) {

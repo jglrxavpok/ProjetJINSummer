@@ -1817,3 +1817,4 @@ MonoBehaviour:
   aim: {fileID: 2067844643}
   bullet: {fileID: 2427278617691278189, guid: 8d03d2cb9d07cc84cb890e9fca0a5f23, type: 3}
   speed: 10
+  shootCooldown: 0.1
