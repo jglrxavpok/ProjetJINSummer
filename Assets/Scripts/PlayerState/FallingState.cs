@@ -17,7 +17,7 @@ namespace JINSummer.PlayerStates {
 
         public override void Update(GameObject gameObject, PlayerControl playerControl) {
             // apply additional gravity to make jump snappier
-            playerControl.GetVelocityRef().y += Time.deltaTime * playerControl.gravity * 1.5f;
+            playerControl.GetVelocityRef().y += Time.deltaTime * playerControl.gravity * 0.5f;
         }
 
         public override void TransitionIn(GameObject playerObj, PlayerControl playerController) {}
