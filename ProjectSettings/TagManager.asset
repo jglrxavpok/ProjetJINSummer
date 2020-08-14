@@ -15,7 +15,7 @@ TagManager:
   - 
   - 
   - LevelCollision
-  - 
+  - Don't Show
   - 
   - 
   - 
@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1959308153
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -47,4 +50,10 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2079678641
+    locked: 0
+  - name: UI
+    uniqueID: 3096943315
+    locked: 0
+  - name: FrontDevDon'tShow
+    uniqueID: 4288036077
     locked: 0

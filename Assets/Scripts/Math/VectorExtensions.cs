@@ -3,13 +3,6 @@
 namespace JINSummer.Math {
     public static class VectorExtensions {
         /**
-         * Dot product between two vectors
-         */
-        public static float Dot(this Vector2 self, Vector2 other) {
-            return self.x * other.x + self.y * other.y;
-        }
-
-        /**
          * Checks if ||self||² &lt; epsilon
          */
         public static bool BasicallyZero(this Vector2 self, float epsilon = 10e-16f) {
@@ -36,7 +29,7 @@ namespace JINSummer.Math {
                 return float.NaN;
             }
 
-            return Dot(self, other) / (self.magnitude * other.magnitude);
+            return Vector2.Dot(self, other) / (self.magnitude * other.magnitude);
         }
     }
 }
