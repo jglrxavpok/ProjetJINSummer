@@ -9,14 +9,9 @@ namespace JINSummer {
     public class HealthBar : MonoBehaviour {
         public Animator[] hearts;
 
-        public int currentHealth = 11;
         private static readonly int Full = Animator.StringToHash("Full");
         private static readonly int Half = Animator.StringToHash("Half");
 
-        public void Start() {
-            SetHealth(currentHealth);
-        }
-        
         public void SetHealth(int value) {
             bool willHaveHalfHeart = value % 2 == 1;
             int heartCount = value / 2;
@@ -26,10 +21,12 @@ namespace JINSummer {
                 } else { // empty
                     hearts[i].SetBool(Full, false);
                 }
-                hearts[heartCount].SetBool(Half, false);
+                hearts[i].SetBool(Half, false);
             }
 
-            hearts[heartCount].SetBool(Half, true);
+            if (willHaveHalfHeart) {
+                hearts[heartCount].SetBool(Half, true);
+            }
         }
 
     }

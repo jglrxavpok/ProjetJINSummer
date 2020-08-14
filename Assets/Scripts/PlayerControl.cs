@@ -9,8 +9,6 @@ public class PlayerControl : PhysicsBase {
     private PlayerState currentState = IdleState.Instance();
 
     protected override void Update() {
-        float mass = rigidbody.mass;
-
         if (currentState.AllowJumping() && Input.GetButton("Jump")) {
             float jumpForce = Mathf.Sqrt(2 * -gravity * jumpHeight);
             velocity.y = jumpForce;
@@ -50,10 +48,7 @@ public class PlayerControl : PhysicsBase {
             }
         }
         
-        print(Time.deltaTime);
-
         currentState.Update(gameObject, this);
-        // TODO: Friction/Drag
 
         base.Update();
     }

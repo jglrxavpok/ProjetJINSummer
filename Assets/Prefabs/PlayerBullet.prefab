@@ -16,8 +16,11 @@ GameObject:
   - component: {fileID: 4074337230203108466}
   - component: {fileID: 2565069859508137617}
   - component: {fileID: 424856419498549035}
+  - component: {fileID: 2038864462528454153}
+  - component: {fileID: 2087027243964936364}
+  - component: {fileID: 2500289853210466033}
   m_Layer: 0
-  m_Name: TestBullet
+  m_Name: PlayerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +148,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 2427278617691278189}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -203,3 +206,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   margin: 100
+--- !u!114 &2038864462528454153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2427278617691278189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ed0e5e711a41f5bdffcebab0b76812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+--- !u!114 &2087027243964936364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2427278617691278189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1240e32c83274fb289ee463338b2b03b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: {fileID: 2038864462528454153}
+  damage: 1
+--- !u!114 &2500289853210466033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2427278617691278189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45edd9387b7549d288f989baeb9bb53b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
