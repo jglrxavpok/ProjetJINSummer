@@ -9,7 +9,7 @@ namespace JINSummer.GeneralBehaviours {
         public void OnCollisionEnter2D(Collision2D other) {
             GameObject otherObject = other.gameObject;
             TeamParticipant otherParticipant = otherObject.GetComponent<TeamParticipant>();
-            if (otherParticipant) {
+            if (otherParticipant != null) {
                 if (otherParticipant.GetTeam().OnOpposingTeam(team.GetTeam())) {
                     Destroy(gameObject);
                     HealthSystem health = otherObject.GetComponent<HealthSystem>();

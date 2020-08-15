@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - LevelCollision
+  - CameraWaveTrigger
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Don't Show
   - Post-Process volumes
   - Camera Anti-Backtrack
-  - 
+  - Camera WaveTrigger
   - 
   - 
   - 

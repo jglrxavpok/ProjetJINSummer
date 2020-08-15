@@ -17,7 +17,7 @@ namespace JINSummer {
             if (cooldown > 0) {
                 cooldown -= Time.deltaTime;                
             }
-            if (Input.GetButton("Shoot") && CanShoot()) {
+            if (ShouldShoot() && CanShoot()) {
                 AimDirection direction = aim.GetDirection();
                 float angle = direction.Angle();
                 float cosangle = Mathf.Cos(angle);
@@ -25,6 +25,10 @@ namespace JINSummer {
                 SpawnBullet(angle, cosangle*speed, sinangle*speed);
                 cooldown = shootCooldown;
             }
+        }
+
+        protected virtual bool ShouldShoot() {
+            return true;
         }
 
         private bool CanShoot() {

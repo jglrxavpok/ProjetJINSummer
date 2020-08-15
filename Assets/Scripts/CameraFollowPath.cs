@@ -15,6 +15,9 @@ namespace JINSummer {
         // prevents back-tracking
         private float maxX;
 
+        // used by waves to stop scroll
+        private bool locked = false;
+
         private void Start() {
             maxX = transform.position.x;
             startZ = transform.position.z;
@@ -57,6 +60,8 @@ namespace JINSummer {
         }
 
         private void Update() {
+            if (locked)
+                return;
             Vector2 playerPos = player.transform.position;
             
             Vector2? positionOnPath = ProjectOnPath(playerPos);
@@ -76,6 +81,14 @@ namespace JINSummer {
             finalCameraPosition.z = startZ;
             transform.position = finalCameraPosition;
             maxX = finalCameraPosition.x;
+        }
+
+        public void LockCameraScroll() {
+            locked = true;
+        }
+        
+        public void UnlockCameraScroll() {
+            locked = false;
         }
     }
 }
