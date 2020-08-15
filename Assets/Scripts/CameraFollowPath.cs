@@ -12,7 +12,11 @@ namespace JINSummer {
         private Vector2[] path;
         private float startZ;
 
+        // prevents back-tracking
+        private float maxX;
+
         private void Start() {
+            maxX = transform.position.x;
             startZ = transform.position.z;
             path = new Vector2[pathProvider.positionCount];
             for (int i = 0; i < path.Length; i++) {
@@ -65,8 +69,13 @@ namespace JINSummer {
 
             float timeDilatation = Time.deltaTime; // ensure lerp speed is consistent even with varying framerate
             Vector3 finalCameraPosition = Vector2.Lerp(transform.position, position, 1.0f/lerpSpeed * timeDilatation*60.0f);
+            if (finalCameraPosition.x < maxX) {
+                // don't move camera
+                return;
+            }
             finalCameraPosition.z = startZ;
             transform.position = finalCameraPosition;
+            maxX = finalCameraPosition.x;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Linq;
 
 public class PhysicsBase : MonoBehaviour {
     public float gravity = -9.81f;
@@ -7,14 +8,17 @@ public class PhysicsBase : MonoBehaviour {
     public Rigidbody2D rigidbody;
     protected bool onGround = false;
     protected Vector2 velocity = new Vector2();
-    public LayerMask levelCollisionMaskLayer;
+    public LayerMask[] collisionLayers;
     public float collisionEpsilon = 0.0001f;
     public float maxSlopeAngle = 50;
     public float stepEpsilon = 0.01f;
     private Vector2 position;
+    
+    private int collisionLayerMask;
 
     private void Start() {
         position = transform.position;
+        collisionLayerMask = collisionLayers.Select(l => l.value).Sum();
     }
 
     // Update is called once per frame
@@ -27,10 +31,8 @@ public class PhysicsBase : MonoBehaviour {
         StepSlopes(ref position, ref velocity, dt);
         position.x += step(position, ref velocity.x, dt, Vector2.right);
         position.y += step(position, ref velocity.y, dt, Vector2.up);
-    }
 
-    private void FixedUpdate() {
-        rigidbody.MovePosition(position);
+        transform.position = position;
     }
 
     /**
@@ -45,8 +47,7 @@ public class PhysicsBase : MonoBehaviour {
         Vector2 startPosition = position + Vector2.right * (Math.Sign(displacement) * collisionEpsilon);
         startPosition.x += (boxCollider.size.x*transform.lossyScale.x / 2.0f) * 0.99f * Math.Sign(displacement); // go to bottom of shape
         startPosition.y -= (boxCollider.size.y*transform.lossyScale.y / 2.0f) + stepEpsilon; // go to bottom of shape
-        Debug.DrawLine(startPosition, startPosition + Vector2.right*displacement, Color.red);
-        var hit = Physics2D.Raycast(startPosition, Vector2.right, displacement, levelCollisionMaskLayer.value);
+        var hit = Physics2D.Raycast(startPosition, Vector2.right, displacement, collisionLayerMask);
         if (hit) {
             float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
             if (slopeAngle < maxSlopeAngle) {
@@ -74,7 +75,7 @@ public class PhysicsBase : MonoBehaviour {
         foreach (var hit in Physics2D.BoxCastAll(
             startPosition + castDirection * (Math.Sign(displacement) * collisionEpsilon),
             boxCollider.size * transform.lossyScale, 0.0f, castDirection,
-            displacement, levelCollisionMaskLayer.value)) {
+            displacement, collisionLayerMask)) {
             if (hit.collider && hit.collider.gameObject && hit.collider.gameObject != this.gameObject) {
                 if (hit.distance < closestDist) {
                     closestDist = hit.distance;

@@ -106,9 +106,7 @@ MonoBehaviour:
   gravity: 0
   boxCollider: {fileID: 3502536031822659291}
   rigidbody: {fileID: -7967708662724145558}
-  levelCollisionMaskLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  collisionLayers: []
   collisionEpsilon: 0.0001
   maxSlopeAngle: 50
   stepEpsilon: 0.01
