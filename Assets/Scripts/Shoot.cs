@@ -24,8 +24,6 @@ namespace JINSummer {
                 float sinangle = Mathf.Sin(angle);
                 SpawnBullet(angle, cosangle*speed, sinangle*speed);
                 cooldown = shootCooldown;
-
-                // TODO: cooldown
             }
         }
 
