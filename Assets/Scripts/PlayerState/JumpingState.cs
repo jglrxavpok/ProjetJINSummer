@@ -23,6 +23,10 @@ namespace JINSummer.PlayerStates {
             return false;
         }
         
+        public override bool AllowAirControl() {
+            return true;
+        }
+        
         // TODO: AllowJumping for a double jump?
     }
 }

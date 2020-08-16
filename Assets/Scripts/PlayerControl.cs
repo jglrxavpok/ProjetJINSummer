@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerControl : PhysicsBase {
     public float AXIS_DEADZONE = 0.1f;
     public float horizontalSpeed = 10f;
+    public float airControlHorizontalAcceleration = 0.0f;
     public float jumpHeight = 10f;
     private PlayerState currentState = IdleState.Instance();
 
@@ -30,14 +31,24 @@ public class PlayerControl : PhysicsBase {
                 
                 velocity.x = horizontalSpeed * strafe;
                 applyGroundFriction = false;
-                // TODO: Air control?
+            } else if (currentState.AllowAirControl()) {
+                strafe = horizontal;
+                velocity.x += strafe * airControlHorizontalAcceleration * Time.deltaTime * 1.0f/0.999f /*counter-drag*/;
             }
+        }
+
+        if (Math.Abs(velocity.x) > horizontalSpeed) {
+            velocity.x = horizontalSpeed * Math.Sign(velocity.x);
         }
         
         if (currentState.AllowCrouching() && vertical < -AXIS_DEADZONE) {
             SetState(CrouchingState.Instance());
-        } else if (strafe == 0f && onGround) {
-            SetState(IdleState.Instance());
+        } else if (onGround) {
+            if (strafe == 0f) {
+                SetState(IdleState.Instance());
+            } else {
+                SetState(RunningState.Instance());
+            }
         }
 
         if (applyGroundFriction) {

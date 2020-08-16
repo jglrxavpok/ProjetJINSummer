@@ -18,5 +18,9 @@ namespace JINSummer.PlayerStates {
         public virtual bool AllowCrouching() {
             return false;
         }
+
+        public virtual bool AllowAirControl() {
+            return false;
+        }
     }
 }

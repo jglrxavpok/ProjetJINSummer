@@ -24,6 +24,10 @@ namespace JINSummer.PlayerStates {
 
         public override void TransitionOut(GameObject playerObj, PlayerControl playerController) {}
 
+        public override bool AllowAirControl() {
+            return true;
+        }
+
         public override bool AllowRunning() {
             return false;
         }
