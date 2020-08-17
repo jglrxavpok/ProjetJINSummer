@@ -9,7 +9,7 @@ public class PhysicsBase : MonoBehaviour {
     protected bool onGround = false;
     protected Vector2 velocity = new Vector2();
     public LayerMask[] collisionLayers;
-    public float collisionEpsilon = 0.0001f;
+    public float collisionEpsilon = 0.01f;
     public float maxSlopeAngle = 50;
     public float stepEpsilon = 0.01f;
     private Vector2 position;
@@ -61,7 +61,13 @@ public class PhysicsBase : MonoBehaviour {
         float displacement = velocity * dt;
         float possibleMovement = stepAxis(startPosition, displacement, castDirection);
         if ((Math.Abs(displacement) - possibleMovement) > 0) {
-            // TODO: handle onGround
+            if (Math.Abs(velocity) > collisionEpsilon) {
+                if (castDirection == Vector2.up) {
+                    gameObject.SendMessage("HitCeillingOrGround", SendMessageOptions.DontRequireReceiver);
+                } else if (castDirection == Vector2.right) {
+                    gameObject.SendMessage("HitWall", SendMessageOptions.DontRequireReceiver);
+                }
+            }
             velocity = possibleMovement / dt * Math.Sign(displacement);
             return possibleMovement * Math.Sign(displacement);
         }
@@ -105,5 +111,9 @@ public class PhysicsBase : MonoBehaviour {
 
     public ref Vector2 GetVelocityRef() {
         return ref velocity;
+    }
+
+    public bool IsOnGround() {
+        return onGround;
     }
 }

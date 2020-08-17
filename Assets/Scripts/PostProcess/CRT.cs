@@ -4,7 +4,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 namespace JINSummer.PostProcess {
     [Serializable]
-    [PostProcess(typeof(CRTRenderer), PostProcessEvent.AfterStack, "Custom/CRT")]
+    [PostProcess(typeof(CRTRenderer), PostProcessEvent.BeforeStack, "Custom/CRT")]
     public sealed class CRT : PostProcessEffectSettings
     {
         [Range(0f, 1f), Tooltip("CRT effect intensity.")]
