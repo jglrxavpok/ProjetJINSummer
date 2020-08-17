@@ -92,13 +92,13 @@ public class PhysicsBase : MonoBehaviour {
         return closestDist;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    protected virtual void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("LevelCollision")) {
             onGround = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
+    protected virtual void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("LevelCollision")) {
             onGround = false;
         }
