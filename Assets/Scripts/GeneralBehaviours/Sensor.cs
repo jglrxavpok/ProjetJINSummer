@@ -8,18 +8,16 @@ namespace JINSummer.GeneralBehaviours {
         public String tag;
 
         private void OnTriggerEnter2D(Collider2D other) {
-            if (other.CompareTag(tag)) {
-                if (messageToSendOnEnter != null) {
-                    gameObject.SendMessageUpwards(messageToSendOnEnter, SendMessageOptions.DontRequireReceiver);
-                }
+            if (!other.CompareTag(tag)) return;
+            if (messageToSendOnEnter != null) {
+                gameObject.SendMessageUpwards(messageToSendOnEnter, SendMessageOptions.DontRequireReceiver);
             }
         }
         
         private void OnTriggerExit2D(Collider2D other) {
-            if (other.CompareTag(tag)) {
-                if (messageToSendOnEnter != null) {
-                    gameObject.SendMessageUpwards(messageToSendOnExit, SendMessageOptions.DontRequireReceiver);
-                }
+            if (!other.CompareTag(tag)) return;
+            if (messageToSendOnEnter != null) {
+                gameObject.SendMessageUpwards(messageToSendOnExit, SendMessageOptions.DontRequireReceiver);
             }
         }
 
