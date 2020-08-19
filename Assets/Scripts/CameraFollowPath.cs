@@ -3,6 +3,7 @@ using JINSummer.Math;
 using UnityEngine;
 
 namespace JINSummer {
+    [RequireComponent(typeof(Camera))]
     public class CameraFollowPath : MonoBehaviour {
         public LineRenderer pathProvider;
         public GameObject player;
@@ -78,6 +79,7 @@ namespace JINSummer {
                 // don't move camera
                 return;
             }
+
             finalCameraPosition.z = startZ;
             transform.position = finalCameraPosition;
             maxX = finalCameraPosition.x;
