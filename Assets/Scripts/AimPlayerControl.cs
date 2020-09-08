@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using JINSummer;
 using UnityEngine;
 
@@ -14,8 +15,10 @@ public class AimPlayerControl : Aim {
     public void Update() {
         float aimX = Input.GetAxis("Aim X");
         float aimY = Input.GetAxis("Aim Y");
-        // no gamepad
-        if (Controls.UseMouseToAim && Input.GetJoystickNames().Length == 0) {
+        
+        bool hasGamepad = Input.GetJoystickNames().Length != 0 &&
+                          Input.GetJoystickNames().Any(x => x.Length != 0);
+        if (Controls.UseMouseToAim && !hasGamepad) {
             Vector3 mouseInWorld = camera.ScreenToWorldPoint(Input.mousePosition);
             aimX = mouseInWorld.x - transform.position.x;
             aimY = mouseInWorld.y - transform.position.y;
