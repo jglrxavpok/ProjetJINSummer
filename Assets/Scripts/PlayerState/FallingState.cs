@@ -22,7 +22,9 @@ namespace JINSummer.PlayerStates {
 
         public override void TransitionIn(GameObject playerObj, PlayerControl playerController) {}
 
-        public override void TransitionOut(GameObject playerObj, PlayerControl playerController) {}
+        public override void TransitionOut(GameObject playerObj, PlayerControl playerController) {
+            playerController.groundParticles.Play();
+        }
 
         public override bool AllowAirControl() {
             return true;

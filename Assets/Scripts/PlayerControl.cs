@@ -7,6 +7,7 @@ public class PlayerControl : PhysicsBase {
     public float horizontalSpeed = 10f;
     public float airControlHorizontalAcceleration = 0.0f;
     public float jumpHeight = 10f;
+    public ParticleSystem groundParticles;
     private PlayerState currentState = IdleState.Instance();
 
     protected override void Update() {
@@ -73,4 +74,5 @@ public class PlayerControl : PhysicsBase {
         currentState = newState;
         newState.TransitionIn(gameObject, this);
     }
+
 }
