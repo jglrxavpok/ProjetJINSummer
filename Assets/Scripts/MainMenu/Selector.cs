@@ -50,9 +50,8 @@ namespace JINSummer.MainMenu {
                 }
                 UpdateSelection();
             }
-            if (Input.GetButton("Submit")) {
+            if (Input.GetButtonDown("Submit")) {
                 selected.OnSelected();
-                Destroy(gameObject);
             }
         }
 
