@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LevelCollision
   - CameraWaveTrigger
+  - Score
   layers:
   - Default
   - TransparentFX

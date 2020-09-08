@@ -26,6 +26,7 @@ namespace JINSummer.GeneralBehaviours {
             }
 
             if (currentHealth <= 0) {
+                BroadcastMessage("OnDeath", SendMessageOptions.DontRequireReceiver);
                 Destroy(gameObject); // TODO: other option for player
             }
         }
