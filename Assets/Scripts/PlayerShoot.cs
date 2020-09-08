@@ -3,7 +3,7 @@
 namespace JINSummer {
     public class PlayerShoot : Shoot {
         protected override bool ShouldShoot() {
-            return Input.GetButton("Shoot");
+            return Input.GetAxis("Shoot") > 0.1;
         }
     }
 }

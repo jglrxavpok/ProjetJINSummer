@@ -15,7 +15,7 @@ public class AimPlayerControl : Aim {
         float aimX = Input.GetAxis("Aim X");
         float aimY = Input.GetAxis("Aim Y");
         // no gamepad
-        if (Input.GetJoystickNames().Length == 0) {
+        if (Controls.UseMouseToAim && Input.GetJoystickNames().Length == 0) {
             Vector3 mouseInWorld = camera.ScreenToWorldPoint(Input.mousePosition);
             aimX = mouseInWorld.x - transform.position.x;
             aimY = mouseInWorld.y - transform.position.y;

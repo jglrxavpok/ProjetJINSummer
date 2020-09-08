@@ -10,7 +10,7 @@ public class PlayerControl : PhysicsBase {
     private PlayerState currentState = IdleState.Instance();
 
     protected override void Update() {
-        if (currentState.AllowJumping() && Input.GetButton("Jump")) {
+        if (currentState.AllowJumping() && Input.GetAxis("Jump") > 0.1) {
             float jumpForce = Mathf.Sqrt(2 * -gravity * jumpHeight);
             velocity.y = jumpForce;
             SetState(JumpingState.Instance());
