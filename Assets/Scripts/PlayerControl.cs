@@ -8,7 +8,16 @@ public class PlayerControl : PhysicsBase {
     public float airControlHorizontalAcceleration = 0.0f;
     public float jumpHeight = 10f;
     public ParticleSystem groundParticles;
+    public GameObject renderer;
+    public BoxCollider2D crouchCollider;
+    public BoxCollider2D usualCollider;
     private PlayerState currentState = IdleState.Instance();
+
+    protected override void Start() {
+        base.Start();
+        crouchCollider.enabled = false;
+        usualCollider.enabled = true;
+    }
 
     protected override void Update() {
         if (currentState.AllowJumping() && Input.GetAxis("Jump") > 0.1) {

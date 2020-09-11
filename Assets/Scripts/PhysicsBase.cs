@@ -16,7 +16,7 @@ public class PhysicsBase : MonoBehaviour {
     
     private int collisionLayerMask;
 
-    private void Start() {
+    protected virtual void Start() {
         position = transform.position;
         collisionLayerMask = collisionLayers.Select(l => l.value).Sum();
     }
