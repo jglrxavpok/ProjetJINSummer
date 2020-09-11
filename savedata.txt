@@ -1,0 +1,11 @@
+UseMouseToAim=True
+HighScore0=481
+HighScore1=481
+HighScore2=466
+HighScore3=466
+HighScore4=0
+HighScore5=0
+HighScore6=0
+HighScore7=0
+HighScore8=0
+HighScore9=0

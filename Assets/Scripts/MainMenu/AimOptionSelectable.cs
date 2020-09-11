@@ -1,4 +1,5 @@
-﻿using UnityEngine.UI;
+﻿using JINSummer.Saves;
+using UnityEngine.UI;
 
 namespace JINSummer.MainMenu {
     public class AimOptionSelectable : Selectable {
@@ -18,6 +19,9 @@ namespace JINSummer.MainMenu {
         public override void OnSelected() {
             Controls.UseMouseToAim = !Controls.UseMouseToAim;
             UpdateText();
+            
+            SaveManager.Set("UseMouseToAim", Controls.UseMouseToAim);
+            SaveManager.Save();
         }
     }
 }
