@@ -53743,10 +53743,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal to next level
       objectReference: {fileID: 0}
+    - target: {fileID: 3082410087480881018, guid: e96242a0f1903134e96995db6d09a7d8,
+        type: 3}
+      propertyPath: nextLevelName
+      value: Victory Screen
+      objectReference: {fileID: 0}
     - target: {fileID: 3082410087480881019, guid: e96242a0f1903134e96995db6d09a7d8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 58.92
+      value: 63.24
       objectReference: {fileID: 0}
     - target: {fileID: 3082410087480881019, guid: e96242a0f1903134e96995db6d09a7d8,
         type: 3}

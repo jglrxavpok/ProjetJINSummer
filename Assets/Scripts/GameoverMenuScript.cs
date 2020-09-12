@@ -24,7 +24,7 @@ namespace JINSummer {
             }
 
             if (Input.GetButton("Cancel")) {
-                GameObject.FindWithTag("Score").GetComponent<ScoreTracker>().SaveAndReset();
+                ScoreTracker.SaveAndReset();
                 SceneManager.LoadScene("Main Menu");
             }
         }
