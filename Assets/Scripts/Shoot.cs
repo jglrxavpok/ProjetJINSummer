@@ -35,7 +35,7 @@ namespace JINSummer {
             return cooldown <= 0f;
         }
 
-        private void SpawnBullet(float angle, float speedX, float speedY) {
+        protected virtual void SpawnBullet(float angle, float speedX, float speedY) {
             GameObject newBullet = Instantiate(bullet);
             newBullet.transform.position = transform.position;
             newBullet.transform.rotation = Quaternion.Euler(0,0,angle);

@@ -15,7 +15,9 @@ namespace JINSummer.PlayerStates {
             return instance;
         }
 
-        public override void TransitionIn(GameObject playerObj, PlayerControl playerController) {}
+        public override void TransitionIn(GameObject playerObj, PlayerControl playerController) {
+            playerController.audioSource.PlayOneShot(playerController.jumpingSound, AudioListener.volume);
+        }
 
         public override void TransitionOut(GameObject playerObj, PlayerControl playerController) {}
 

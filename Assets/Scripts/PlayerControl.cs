@@ -11,10 +11,13 @@ public class PlayerControl : PhysicsBase {
     public GameObject renderer;
     public BoxCollider2D crouchCollider;
     public BoxCollider2D usualCollider;
+    public AudioSource audioSource;
+    public AudioClip jumpingSound;
     private PlayerState currentState = IdleState.Instance();
 
     protected override void Start() {
         base.Start();
+        audioSource = GetComponent<AudioSource>();
         crouchCollider.enabled = false;
         usualCollider.enabled = true;
     }
