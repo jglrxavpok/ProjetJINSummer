@@ -7,5 +7,5 @@ HighScore4=481
 HighScore5=481
 HighScore6=481
 HighScore7=481
-HighScore8=466
+HighScore8=481
 HighScore9=466

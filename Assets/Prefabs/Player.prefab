@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 3399299002398721607}
   - component: {fileID: 7347612253951745985}
   - component: {fileID: 7669619028789395782}
+  - component: {fileID: 1913119637367158085}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -395,7 +396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  maxHealth: 20
+  maxHealth: 10
 --- !u!114 &3399299002398721601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,6 +549,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1913119637367158085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3399299002398721609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff345d8dd9a14ddba18ca6606409baf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3399299002532273067
 GameObject:
   m_ObjectHideFlags: 0

@@ -65467,6 +65467,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &562291512
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 136629708062346769, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.4834585
+      objectReference: {fileID: 0}
+    - target: {fileID: 136629708062346769, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 136629708062346769, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136629708062346769, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136629708062346769, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136629708062346769, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136629708062346769, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 136629708062346769, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 136629708062346769, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136629708062346769, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136629708062346769, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136629708062346780, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_Name
+      value: Killzone
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6bc7070bc726a764991d2b09a1998bd5, type: 3}
 --- !u!1 &588220058
 GameObject:
   m_ObjectHideFlags: 0
@@ -65923,6 +65992,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7139646862231002889, guid: 3666afd6f6e72ae41a64b9357b1759aa,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8517438760729317241, guid: 3666afd6f6e72ae41a64b9357b1759aa,
         type: 3}
       propertyPath: m_Camera

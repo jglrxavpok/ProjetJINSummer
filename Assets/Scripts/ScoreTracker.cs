@@ -9,7 +9,8 @@ namespace JINSummer {
         public float maxTime = 0.5f;
         public float sizeMultiplier = 0.25f;
         
-        private int currentValue = 456;
+        // Static to keep track along game
+        private static int currentValue = 456;
         private Text text;
         private int startSize;
         private float animationTime = 0.0f;
@@ -90,6 +91,11 @@ namespace JINSummer {
             // FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME 
             // FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME FIXME 
             HighScores.NewScore(currentValue);
+        }
+
+        public void SaveAndReset() {
+            HighScores.NewScore(currentValue);
+            currentValue = 0;
         }
     }
 }

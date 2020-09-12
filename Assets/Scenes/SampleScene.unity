@@ -53692,6 +53692,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6359fb254f64974685817924154ebb1, type: 3}
+--- !u!1001 &136629708063952329
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 136629708062346769, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 136629708062346769, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136629708062346769, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136629708062346769, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136629708062346780, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_Name
+      value: Killzone
+      objectReference: {fileID: 0}
+    - target: {fileID: 136629708062346782, guid: 6bc7070bc726a764991d2b09a1998bd5,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6bc7070bc726a764991d2b09a1998bd5, type: 3}
 --- !u!1001 &3082410087881202513
 PrefabInstance:
   m_ObjectHideFlags: 0
