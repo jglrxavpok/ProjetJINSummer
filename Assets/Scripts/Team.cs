@@ -1,6 +1,4 @@
-﻿using UnityEditor.UI;
-
-namespace JINSummer {
+﻿namespace JINSummer {
     public enum Team {
         PLAYER,
         ENEMIES
