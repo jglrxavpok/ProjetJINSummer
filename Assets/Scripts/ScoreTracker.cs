@@ -41,6 +41,9 @@ namespace JINSummer {
 
         public void IncreaseScore(int amount) {
             currentValue += amount;
+            if (currentValue < 0) {
+                currentValue = 0;
+            }
             UpdateText();
             animationTime = maxTime;
         }

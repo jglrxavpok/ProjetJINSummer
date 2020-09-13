@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 7318072093132210491}
   - component: {fileID: 7318072093132210495}
   - component: {fileID: 7318072093132210488}
+  - component: {fileID: 7284962583831611901}
   m_Layer: 0
   m_Name: Test Patrol Enemy
   m_TagString: Untagged
@@ -434,6 +435,19 @@ MonoBehaviour:
   maxSlopeAngle: 50
   stepEpsilon: 0.01
   movementSpeed: 3
+--- !u!114 &7284962583831611901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7318072093132210494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 377ef8d0069e47ca95462df735be1d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreAmount: 10
 --- !u!1 &7318072094031324237
 GameObject:
   m_ObjectHideFlags: 0
