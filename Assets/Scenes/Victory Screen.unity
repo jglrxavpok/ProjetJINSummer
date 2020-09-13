@@ -2122,6 +2122,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &577124690
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8125898543078151164, guid: da2602fd6a83a7b459771ee33f0ea10f,
+        type: 3}
+      propertyPath: m_Name
+      value: MusicPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125898543078151167, guid: da2602fd6a83a7b459771ee33f0ea10f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.1681888
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125898543078151167, guid: da2602fd6a83a7b459771ee33f0ea10f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.7316413
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125898543078151167, guid: da2602fd6a83a7b459771ee33f0ea10f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -52.847656
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125898543078151167, guid: da2602fd6a83a7b459771ee33f0ea10f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125898543078151167, guid: da2602fd6a83a7b459771ee33f0ea10f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125898543078151167, guid: da2602fd6a83a7b459771ee33f0ea10f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125898543078151167, guid: da2602fd6a83a7b459771ee33f0ea10f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125898543078151167, guid: da2602fd6a83a7b459771ee33f0ea10f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125898543078151167, guid: da2602fd6a83a7b459771ee33f0ea10f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125898543078151167, guid: da2602fd6a83a7b459771ee33f0ea10f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125898543078151167, guid: da2602fd6a83a7b459771ee33f0ea10f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: da2602fd6a83a7b459771ee33f0ea10f, type: 3}
 --- !u!1 &670333207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2942,3 +3011,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &7087631815669555428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7087631815669555430}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1681888, y: 2.7316413, z: -52.847656}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7087631815669555430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7087631815669555428}
+  - component: {fileID: 7087631815669555431}
+  m_Layer: 0
+  m_Name: MenuMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &7087631815669555431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7087631815669555430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbdde3a39a6f4ea6b4bc3c40b83046e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: {fileID: 8300000, guid: 9fc50545183b9ac4c8878b6a474a4ff8, type: 3}
