@@ -6,7 +6,7 @@ namespace JINSummer.PlayerStates {
             GameObject gameover = GameObject.FindWithTag("Gameover");
             gameover.GetComponent<GameoverMenuScript>().Trigger();
             
-            GameObject.FindWithTag("Score").GetComponent<ScoreTracker>().IncreaseScore(-100);
+            GameObject.FindWithTag("Score").GetComponent<ScoreTracker>().IncreaseScore(-200);
         }
     }
 }

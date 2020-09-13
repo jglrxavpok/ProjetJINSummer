@@ -340,7 +340,7 @@ MonoBehaviour:
   aim: {fileID: 7318072093132210489}
   bullet: {fileID: 2427278617691278189, guid: ad7654a21f3d83e4e928d4ff08ab9614, type: 3}
   speed: 10
-  shootCooldown: 2
+  shootCooldown: 0.5
 --- !u!114 &7318072093132210468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,7 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 377ef8d0069e47ca95462df735be1d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreAmount: 10
+  scoreAmount: 25
 --- !u!1 &7318072094031324237
 GameObject:
   m_ObjectHideFlags: 0
